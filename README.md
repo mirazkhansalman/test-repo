@@ -1,26 +1,145 @@
-# Markdown Document
+# 🚀 Git & GitHub Cheat Sheet (বাংলা নির্দেশিকা)
 
-Welcome to **Code Studio IDE** on macOS!
+Git এবং GitHub ব্যবহারের জন্য অতি প্রয়োজনীয় কমান্ডগুলোর একটি সহজ ও সাজানো রেফারেন্স গাইড।
 
-> [!NOTE]
-> Code Studio provides real-time GitHub-flavored Markdown preview with instant side-by-side editing.
+---
 
-## Key Capabilities
-- **Live Preview**: Markdown renders smoothly on the right while you edit on the left.
-- **Word Wrap**: Long lines of text and paragraphs wrap automatically.
-- **Alert Callouts**: Support for note, tip, important, warning, and caution blocks.
-- **Task Tracking**: Interactive task checkboxes.
+## 📌 সূচিপত্র (Table of Contents)
+1. [গ্লোবাল কনফিগারেশন (Global Configuration)](#১-গ্লোবাল-কনফিগারেশন-global-configuration)
+2. [রিপোজিটরি সেটআপ (Repository Setup)](#২-রিপোজিটরি-সেটআপ-repository-setup)
+3. [ট্র্যাকিং ও স্টেজিং (Tracking & Staging)](#৩-ট্র্যাকিং-ও-স্টেজিং-tracking--staging)
+4. [কমিট করা (Committing)](#৪-কমিট-করা-committing)
+5. [সিঙ্ক ও পুশ করা (Sync & Push)](#৫-সিঙ্ক-ও-পুশ-করা-sync--push)
+6. [ব্রাঞ্চ ব্যবস্থাপনা (Branch Management)](#৬-ব্রাঞ্চ-ব্যবস্থাপনা-branch-management)
+7. [পরিবর্তন মার্জ ও ফেচ করা (Merging & Fetching)](#৭-পরিবর্তন-মার্জ-ও-ফেচ-করা-merging--fetching)
+8. [পরিবর্তন বাতিল বা রোলব্যাক করা (Undoing Changes)](#৮-পরিবর্তন-বাতিল-বা-রোলব্যাক-করা-undoing-changes)
+9. [ইতিহাস ও লগ পরিদর্শন (History & Inspection)](#৯-ইতিহাস-ও-লগ-পরিদর্শন-history--inspection)
+10. [কুইক শর্টকাট (Quick Shortcuts)](#১০-কুইক-শর্টকাট-quick-shortcuts)
 
-### Python Code Sample
-```python
-def greet(name: str) -> str:
-    """Returns a welcoming greeting."""
-    return f"Hello, {name}! Enjoy Code Studio IDE."
+---
 
-print(greet("Developer"))
-```
+## ১. গ্লোবাল কনফিগারেশন (Global Configuration)
 
-### Quick Checklist
-- [x] Fast live preview
-- [x] Line wrap toggle on/off
-- [ ] Build native macOS app
+গিট প্রথমবার ইনস্টল করার পর আপনার পরিচয় সেট করার জন্য:
+
+| কমান্ড (Command) | বিবরণ (Description) |
+| :--- | :--- |
+| `git config --global user.name "Your Name"` | আপনার গিট ইউজারনেম সেট করে। |
+| `git config --global user.email "your.email@example.com"` | আপনার গিটহাব অ্যাকাউন্টের ইমেইল সেট করে। |
+
+---
+
+## ২. রিপোজিটরি সেটআপ (Repository Setup)
+
+নতুন প্রজেক্ট শুরু করতে বা বিদ্যমান প্রজেক্ট যুক্ত করতে:
+
+| কমান্ড (Command) | বিবরণ (Description) |
+| :--- | :--- |
+| `git init` | বর্তমান ফোল্ডারে একটি নতুন এবং খালি লোকাল Git রিপোজিটরি ইনিশিয়ালাইজ/তৈরি করে। |
+| `git remote add origin <url>` | লোকাল রিপোজিটরিকে রিমোট GitHub রিপোজিটরি (URL-এর মাধ্যমে)-র সাথে যুক্ত করে। |
+| `git remote` | সংযুক্ত রিমোট রিপোজিটরিগুলোর তালিকা দেখতে ব্যবহার করা হয়। |
+| `git remote -v` | রিমোট রিপোজিটরির নাম এবং ফেচ (fetch) ও পুশ (push)-এর সম্পূর্ণ URL দেখায়। |
+| `git clone <url>` | রিমোট GitHub রিপোজিটরি থেকে প্রজেক্টের একটি সম্পূর্ণ কপি লোকাল কম্পিউটারে ক্লোন/ডাউনলোড করে আনে। |
+
+---
+
+## ৩. ট্র্যাকিং ও স্টেজিং (Tracking & Staging)
+
+ফাইলের পরিবর্তনের অবস্থা দেখতে ও পরবর্তী কমিটের জন্য প্রস্তুত করতে:
+
+| কমান্ড (Command) | বিবরণ (Description) |
+| :--- | :--- |
+| `git status` | রিপোজিটরির বর্তমান অবস্থা দেখায় (কোন ফাইলগুলোতে পরিবর্তন এসেছে, কোনগুলো কমিট করার জন্য প্রস্তুত ইত্যাদি)। |
+| `git add .` | বর্তমান ডিরেক্টরির পরিবর্তিত বা নতুন সব ফাইলকে পরবর্তী কমিটের জন্য স্টেজ (Stage) বা প্রস্তুত করে। |
+| `git add <file>` | নির্দিষ্ট কোনো ফাইলকে স্টেজ করার জন্য ব্যবহার করা হয়। |
+
+---
+
+## ৪. কমিট করা (Committing)
+
+স্টেজে রাখা পরিবর্তনগুলো স্থায়ীভাবে সংরক্ষণ করতে:
+
+| কমান্ড (Command) | বিবরণ (Description) |
+| :--- | :--- |
+| `git commit -m "your message"` | স্টেজ করা ফাইলগুলোর পরিবর্তন একটি নির্দিষ্ট বার্তা বা মেসেজসহ লোকাল রিপোজিটরিতে পার্মানেন্টভাবে সেভ বা কমিট করে। |
+
+---
+
+## ৫. সিঙ্ক ও পুশ করা (Sync & Push)
+
+লোকাল কোড GitHub সার্ভারে আপলোড করতে:
+
+| কমান্ড (Command) | বিবরণ (Description) |
+| :--- | :--- |
+| `git push -u origin main` | লোকাল রিপোজিটরির কমিট করা পরিবর্তনগুলো রিমোট GitHub রিপোজিটরির `main` ব্রাঞ্চে আপলোড বা সেভ করে এবং ডিফল্ট আপস্ট্রিম ট্র্যাক সেট করে। |
+
+---
+
+## ৬. ব্রাঞ্চ ব্যবস্থাপনা (Branch Management)
+
+ভিন্ন ভিন্ন ফিচারের জন্য আলাদা শাখা তৈরি ও নিয়ন্ত্রণ করতে:
+
+| কমান্ড (Command) | বিবরণ (Description) |
+| :--- | :--- |
+| `git branch` | লোকাল রিপোজিটরির সব ব্রাঞ্চের তালিকা দেখায় এবং বর্তমানে কোন ব্রাঞ্চে আছেন তা চিহ্নিত করে। |
+| `git branch <branch-name>` | একটি নতুন ব্রাঞ্চ তৈরি করে। |
+| `git checkout <branch-name>` <br> *অথবা* `git switch <branch-name>` | নির্দিষ্ট ব্রাঞ্চে সুইচ বা নেভিগেট করে। |
+| `git checkout -b <branch-name>` <br> *অথবা* `git switch -c <branch-name>` | নতুন ব্রাঞ্চ তৈরি করে এবং সরাসরি সেই ব্রাঞ্চে সুইচ করে। |
+| `git branch -d <branch-name>` | কাজ শেষে নির্দিষ্ট কোনো লোকাল ব্রাঞ্চ মুছে ফেলে (Delete)। |
+
+---
+
+## ৭. পরিবর্তন মার্জ ও ফেচ করা (Merging & Fetching)
+
+অন্য ব্রাঞ্চ বা রিমোট রিপোজিটরি থেকে আপডেট একত্রিত করতে:
+
+| কমান্ড (Command) | বিবরণ (Description) |
+| :--- | :--- |
+| `git pull origin <branch-name>` | GitHub বা রিমোট রিপোজিটরি থেকে সর্বশেষ কোড ডাউনলোড করে সরাসরি আপনার লোকাল ব্রাঞ্চের সাথে যুক্ত (Merge) করে। |
+| `git fetch` | রিমোট রিপোজিটরির নতুন আপডেটগুলো নিয়ে আসে, কিন্তু লোকাল কোডে কোনো পরিবর্তন/মার্জ করে না। |
+| `git merge <branch-name>` | অন্য কোনো ব্রাঞ্চের কাজকে বর্তমান অ্যাক্টিভ ব্রাঞ্চে যুক্ত বা মার্জ করে। |
+
+---
+
+## ৮. পরিবর্তন বাতিল বা রোলব্যাক করা (Undoing Changes)
+
+ভুল বা অপ্রয়োজনীয় কাজ পূর্বাবস্থায় ফিরিয়ে নিতে:
+
+| কমান্ড (Command) | বিবরণ (Description) |
+| :--- | :--- |
+| `git restore <file>` | কমিট করার আগেই কোনো ফাইলের আনসেভড পরিবর্তন বাতিল করে আগের অবস্থায় ফিরিয়ে নেয়। |
+| `git restore --staged <file>` | `git add` করে স্টেজ করা ফাইলকে আবার আনস্টেজ (Unstage) করে। |
+| `git reset HEAD~1` | সর্বশেষ কমিটটি বাতিল করে, তবে ফাইলের কোডের পরিবর্তন আনকমিটেড অবস্থায় বজায় রাখে। |
+| `git stash` | অসমাপ্ত কাজগুলোকে সাময়িকভাবে লুকিয়ে বা সেভ করে রাখে যাতে ব্রাঞ্চ পরিবর্তন করা যায়। |
+| `git stash pop` | সাময়িকভাবে লুকিয়ে রাখা কাজগুলো আবার ফিরিয়ে আনে। |
+
+---
+
+## ৯. ইতিহাস ও লগ পরিদর্শন (History & Inspection)
+
+কাজের পূর্ববর্তী ইতিহাস ও কোডের তফাত দেখতে:
+
+| কমান্ড (Command) | বিবরণ (Description) |
+| :--- | :--- |
+| `git log` | প্রজেক্টে এ পর্যন্ত যত কমিট করা হয়েছে তার বিস্তারিত ইতিহাস এবং মেসেজ দেখায়। |
+| `git log --oneline` | কমিট হিস্ট্রি সংক্ষিপ্ত এক লাইনে সুন্দরভাবে সাজিয়ে দেখায়। |
+| `git diff` | ফাইলে ঠিক কী কী কোড পরিবর্তন করা হয়েছে তা লাইন বাই লাইন বিস্তারিত দেখায়। |
+
+---
+
+## ১০. কুইক শর্টকাট (Quick Shortcuts)
+
+সাধারণ কাজের জন্য চটজলদি কিছু কমান্ড:
+
+* **Add any GitHub repo to local:**
+  ```bash
+  git remote add origin <repo-url>
+  ```
+* **Clone / Download any repo:**
+  ```bash
+  git clone <repo-url>
+  ```
+* **Push local directory to GitHub:**
+  ```bash
+  git push -u origin main
+  ```
