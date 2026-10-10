@@ -1,20 +1,20 @@
-# 🚀 Git & GitHub Cheat Sheet (বাংলা নির্দেশিকা)
+# 🚀 Git & GitHub Cheat Sheet
 
 Git এবং GitHub ব্যবহারের জন্য অতি প্রয়োজনীয় কমান্ডগুলোর একটি সহজ ও সাজানো রেফারেন্স গাইড।
 
 ---
 
 ## 📌 সূচিপত্র (Table of Contents)
-1. [গ্লোবাল কনফিগারেশন (Global Configuration)](#১-গ্লোবাল-কনফিগারেশন-global-configuration)
-2. [রিপোজিটরি সেটআপ (Repository Setup)](#২-রিপোজিটরি-সেটআপ-repository-setup)
-3. [ট্র্যাকিং ও স্টেজিং (Tracking & Staging)](#৩-ট্র্যাকিং-ও-স্টেজিং-tracking--staging)
-4. [কমিট করা (Committing)](#৪-কমিট-করা-committing)
-5. [সিঙ্ক ও পুশ করা (Sync & Push)](#৫-সিঙ্ক-ও-পুশ-করা-sync--push)
-6. [ব্রাঞ্চ ব্যবস্থাপনা (Branch Management)](#৬-ব্রাঞ্চ-ব্যবস্থাপনা-branch-management)
-7. [পরিবর্তন মার্জ ও ফেচ করা (Merging & Fetching)](#৭-পরিবর্তন-মার্জ-ও-ফেচ-করা-merging--fetching)
-8. [পরিবর্তন বাতিল বা রোলব্যাক করা (Undoing Changes)](#৮-পরিবর্তন-বাতিল-বা-রোলব্যাক-করা-undoing-changes)
-9. [ইতিহাস ও লগ পরিদর্শন (History & Inspection)](#৯-ইতিহাস-ও-লগ-পরিদর্শন-history--inspection)
-10. [কুইক শর্টকাট (Quick Shortcuts)](#১০-কুইক-শর্টকাট-quick-shortcuts)
+1. [Global Configuration](#১-গ্লোবাল-কনফিগারেশন-global-configuration)
+2. [Repository Setup](#২-রিপোজিটরি-সেটআপ-repository-setup)
+3. [Tracking & Staging](#৩-ট্র্যাকিং-ও-স্টেজিং-tracking--staging)
+4. [Committing](#৪-কমিট-করা-committing)
+5. [Sync & Push](#৫-সিঙ্ক-ও-পুশ-করা-sync--push)
+6. [Branch Management](#৬-ব্রাঞ্চ-ব্যবস্থাপনা-branch-management)
+7. [Merging & Fetching](#৭-পরিবর্তন-মার্জ-ও-ফেচ-করা-merging--fetching)
+8. [Undoing Changes](#৮-পরিবর্তন-বাতিল-বা-রোলব্যাক-করা-undoing-changes)
+9. [History & Inspection](#৯-ইতিহাস-ও-লগ-পরিদর্শন-history--inspection)
+10. [Quick Shortcuts](#১০-কুইক-শর্টকাট-quick-shortcuts)
 
 ---
 
